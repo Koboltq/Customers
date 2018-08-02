@@ -2,17 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { CustomerComponent } from './customer/customer.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: "", component: HomeComponent},
+      {path: "customer", component: CustomerComponent},
+      {path: "updateCustomer/:id", component: UpdateCustomerComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

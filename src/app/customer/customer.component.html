@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="col-xs-12">
+    <form class="ng-invalid" id="formNewCustomer" name="formNewCustomer" #productData="ngForm" (ngSubmit)="addNewCustomer(customer)">
+      <h3>Add new customer</h3>
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required  [(ngModel)]="customer.name" name="name" #name="ngModel" />   
+      </div>
+      <div class="form-group">
+          <label for="surname">Surname</label>
+          <input type="text" class="form-control" id="surname" required  [(ngModel)]="customer.surname" name="surname" #surname="ngModel"/>
+      </div>
+      <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" required  [(ngModel)]="customer.city" name="city"/>
+      </div>
+      <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" class="form-control" id="country" required  [(ngModel)]="customer.country" name="country"/>
+      </div>
+      <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="sex" required  [(ngModel)]="customer.gender" name="gender">
+            <option>male</option>
+            <option>female</option>
+          </select>
+      </div>
+      <!-- <input type="text" name="name" [(ngModel)]="customer.name" />
+      <input type="text" name="surname" [(ngModel)]="customer.surname" /> -->
+      <input class="btn btn-success" [disabled]="!form.valid" type="submit" value="Add Customer"/>
+    </form>
+  </div>  
+</div>

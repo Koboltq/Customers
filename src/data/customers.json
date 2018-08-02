@@ -1,0 +1,63 @@
+{
+  "customers": [
+    {
+      "name": "test",
+      "surname": "tes",
+      "city": "Katowice",
+      "country": "432",
+      "gender": "female",
+      "id": 5
+    },
+    {
+      "name": "test",
+      "surname": "tes4324",
+      "image": "../assets/george1.png",
+      "id": 6
+    },
+    {
+      "name": "Sławomir Naczyński",
+      "surname": "Naczyński",
+      "city": "",
+      "country": "",
+      "gender": true,
+      "image": "../assets/george1.png",
+      "id": 7
+    },
+    {
+      "name": "Sławomir Naczyński",
+      "surname": "Naczyński",
+      "city": "",
+      "country": "",
+      "gender": true,
+      "image": "../assets/george1.png",
+      "id": 8
+    },
+    {
+      "name": "Sławomir Naczyński",
+      "surname": "Naczyński",
+      "city": "",
+      "country": "",
+      "gender": true,
+      "image": "../assets/george1.png",
+      "id": 9
+    },
+    {
+      "name": "Sławomir Naczyński",
+      "surname": "Naczyński",
+      "city": "Żory",
+      "country": "Polska",
+      "gender": "female",
+      "image": "../assets/george1.png",
+      "id": 10
+    },
+    {
+      "name": "Sławomir Naczyński",
+      "surname": "Naczyński",
+      "city": "Żory",
+      "country": "Polska",
+      "gender": "male",
+      "image": "../assets/george1.png",
+      "id": 11
+    }
+  ]
+}
