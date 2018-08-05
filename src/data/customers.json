@@ -2,16 +2,10 @@
   "customers": [
     {
       "name": "test",
-      "surname": "tes",
-      "city": "Katowice",
-      "country": "432",
-      "gender": "female",
-      "id": 5
-    },
-    {
-      "name": "test",
       "surname": "tes4324",
-      "image": "../assets/george1.png",
+      "city": "Żory",
+      "country": "Polska",
+      "gender": "male",
       "id": 6
     },
     {

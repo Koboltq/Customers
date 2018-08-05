@@ -1,0 +1,7 @@
+navigation {
+    width:20%;
+}
+
+router-outlet {
+    width:80%;  
+}

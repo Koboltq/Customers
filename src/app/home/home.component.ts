@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 
 @Component({
-  selector: 'router-outlet',
+  selector: 'app-customers',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

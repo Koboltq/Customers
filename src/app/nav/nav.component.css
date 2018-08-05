@@ -1,0 +1,32 @@
+.navbar-fixed-left {
+    width: 150px;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+    float: none;
+    width:139px;
+}
+
+.navbar-fixed-left + .container {
+    padding-left: 160px;
+}
+
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+    margin-top:-50px;
+    margin-left:140px;
+}
+
+i {
+   margin-right: 5px; 
+}
+
+nav ul li:hover {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    width:10px;
+    margin-left:-20px;
+}
