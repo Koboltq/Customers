@@ -1,57 +1,12 @@
 {
   "customers": [
     {
-      "name": "test",
-      "surname": "tes4324",
-      "city": "Żory",
+      "name": "Jan",
+      "surname": "NOwak",
+      "city": "Katowice",
       "country": "Polska",
       "gender": "male",
       "id": 6
-    },
-    {
-      "name": "Sławomir Naczyński",
-      "surname": "Naczyński",
-      "city": "",
-      "country": "",
-      "gender": true,
-      "image": "../assets/george1.png",
-      "id": 7
-    },
-    {
-      "name": "Sławomir Naczyński",
-      "surname": "Naczyński",
-      "city": "",
-      "country": "",
-      "gender": true,
-      "image": "../assets/george1.png",
-      "id": 8
-    },
-    {
-      "name": "Sławomir Naczyński",
-      "surname": "Naczyński",
-      "city": "",
-      "country": "",
-      "gender": true,
-      "image": "../assets/george1.png",
-      "id": 9
-    },
-    {
-      "name": "Sławomir Naczyński",
-      "surname": "Naczyński",
-      "city": "Żory",
-      "country": "Polska",
-      "gender": "female",
-      "image": "../assets/george1.png",
-      "id": 10
-    },
-    {
-      "name": "Sławomir Naczyński",
-      "surname": "Naczyński",
-      "city": "Żory",
-      "country": "Polska",
-      "gender": "male",
-      "image": "../assets/george1.png",
-      "id": 11
     }
   ]
 }
