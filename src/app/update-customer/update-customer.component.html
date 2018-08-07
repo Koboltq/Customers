@@ -26,8 +26,14 @@
                     <option>female</option>
                 </select>
             </div>
-            <!-- <input type="text" name="name" [(ngModel)]="customer.name" />
-            <input type="text" name="surname" [(ngModel)]="customer.surname" /> -->
+            <div class="weather">
+                <div class="media">
+                    <span>
+                        <img src="{{weather.image}}" class="pull-left weather-image"/>
+                        <h3>{{weather.temp}} ℃</h3>
+                    </span>
+                </div>
+            </div>
             <input class="btn btn-success" type="submit" value="Update Customer"/>
             </form>
         </div>  

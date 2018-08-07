@@ -27,10 +27,6 @@ export class CustomerComponent implements OnInit {
   addNewCustomer = function(customer) {
     this.http.post("http://localhost:5555/customers/", this.customer).subscribe((res:Response)=>{
 
-      customer.image = "../assets/george1.png";
-
-      console.log(customer.image);
-      console.log(res);
     })
   }
 

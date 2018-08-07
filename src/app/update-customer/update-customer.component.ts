@@ -13,7 +13,7 @@ export class UpdateCustomerComponent implements OnInit {
   id:number;
   customer = {};
   customers = [];
-  weather = [];
+  weather = {};
   customertObj:Object = {};
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private router: Router, private route: ActivatedRoute, private http:Http) { }
@@ -39,13 +39,17 @@ export class UpdateCustomerComponent implements OnInit {
 
   getWeather(city) {
     // const url = "https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+city.toString()+"') and u='c'&format=json";
-    const url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22'+city.toString()+'%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+    const url = "https://api.openweathermap.org/data/2.5/weather?q="+city.toString()+"&APPID=73455d85dad4656f21ade8abebe0490d&units=metric";
     this.http.get(url).subscribe(
       (res:Response) => {
-        console.log("city " + city);
         this.weather = res.json();
         console.log(this.weather);
-        console.log(this.weather['temp']);
+        console.log(this.weather["weather"][0].icon);
+
+        this.weather = {
+            "temp": this.weather["main"].temp,
+            "image": 'http://openweathermap.org/img/w/'+this.weather["weather"][0].icon+'.png'
+        };
       }
     )
   }
