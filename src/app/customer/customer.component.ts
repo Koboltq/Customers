@@ -1,36 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import {FormControl,Validators,FormGroup,FormsModule} from '@angular/forms';
-
+import {ICustomers } from '../models/customer';
+import {CustomersService} from '../services/CustomersService/Customers.service';
+import {Observable} from 'rxjs/Observable';
+import {EmitterService} from 'app/services/EmitterService/Emitter.service';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
 
-export class CustomerComponent implements OnInit {
-  
-  constructor(private http: Http) { }
+export class CustomerComponent implements OnChanges {
+  customer: ICustomers;
+  private editing : boolean = false;
+  @Input() editId: string;
 
-  customer = new FormGroup({
-    name: new FormControl("", Validators.compose([
-      Validators.required,
-      Validators.minLength(3)
-    ])),
-    surname: new FormControl(""),
-    city: new FormControl(""),
-    country:new FormControl( ""),
-    gender: new FormControl(true),
-    image: new FormControl("")
-  });
+  constructor(private _customersService: CustomersService ) {
+    this.customer = new ICustomers();
+    console.log(this.customer);
+   }
 
-  addNewCustomer = function(customer) {
-    this.http.post("http://localhost:5555/customers/", this.customer).subscribe((res:Response)=>{
+  addNewCustomer() {
 
-    })
+    let customerOperation:Observable<ICustomers[]>;
+
+    if(!this.editing) {
+      customerOperation = this._customersService.addCustomer(this.customer);
+    } else {
+      customerOperation = this._customersService.updateCustomer(this.customer);
+    }
+    customerOperation.subscribe(customers => {
+      this.customer = new ICustomers();
+      if(this.editing) {
+        this.editing = !this.editing;
+      } 
+    },
+    err=> {
+      console.log(err);
+    });
+
   }
 
-  ngOnInit() {
+  ngOnChanges() {
+    console.log('onchanges');
+    console.log(EmitterService.get(this.editId).subscribe((customer : ICustomers) => {
+      this.customer = customer,
+      this.editing = true;
+    }));
   }
 
 }

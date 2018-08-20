@@ -1,12 +1,31 @@
 {
   "customers": [
     {
-      "name": "Jan",
-      "surname": "NOwak",
-      "city": "Orlando",
-      "country": "USA",
+      "name": "Aneta",
+      "surname": "Atena",
+      "city": "Radzionków",
+      "country": "Polska",
+      "gender": "female",
+      "image": "./assets/icon8-woman.png",
+      "id": 1
+    },
+    {
+      "name": "Slawek",
+      "surname": "Nacz",
+      "city": "Katowice",
+      "country": "POland",
       "gender": "male",
-      "id": 6
+      "image": "./assets/icon8-man.png",
+      "id": 2
+    },
+    {
+      "name": "Paweł",
+      "surname": "Pablo",
+      "city": "Pawłowice",
+      "country": "Polska",
+      "gender": "male",
+      "image": "./assets/icon8-woman.png",
+      "id": 3
     }
   ]
 }

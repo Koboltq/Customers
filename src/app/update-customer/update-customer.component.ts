@@ -14,6 +14,7 @@ export class UpdateCustomerComponent implements OnInit {
   customer = {};
   customers = [];
   weather = {};
+  exist = false;
   customertObj:Object = {};
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private router: Router, private route: ActivatedRoute, private http:Http) { }
@@ -43,8 +44,6 @@ export class UpdateCustomerComponent implements OnInit {
     this.http.get(url).subscribe(
       (res:Response) => {
         this.weather = res.json();
-        console.log(this.weather);
-        console.log(this.weather["weather"][0].icon);
 
         this.weather = {
             "temp": this.weather["main"].temp,
@@ -58,12 +57,14 @@ export class UpdateCustomerComponent implements OnInit {
     this.route.params.subscribe(params=> {
       this.id = +params['id'];
     });
+
     this.http.get("http://localhost:5555/customers").subscribe(
       (res: Response) => {
         this.customers = res.json();
         for(var i = 0; i < this.customers.length; i++) {
           if(parseInt(this.customers[i].id) === this.id) {
             this.customer = this.customers[i];
+            this.exist = true;
             this.getWeather(this.customers[i].city);
             break;
           }

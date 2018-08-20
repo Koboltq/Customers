@@ -1,6 +1,9 @@
 <div class="container">
     <div class="content">
         <div class="col-xs-12">
+            <p *ngIf="!exist">Customer does not exsist!</p>
+        </div>
+        <div class="col-xs-12" *ngIf="exist">
             <form class="ng-invalid" id="formNewCustomer" name="formNewCustomer" #productData="ngForm" (ngSubmit)="updateCustomer(customer)">
             <h3>Update customer</h3>
             <div class="form-group">

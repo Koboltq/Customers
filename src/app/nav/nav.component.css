@@ -30,3 +30,7 @@ nav ul li:hover {
     width:10px;
     margin-left:-20px;
 }
+
+.navbar-fixed-left {
+    left:0px;
+}

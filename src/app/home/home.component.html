@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of customers">
+        <tr *ngFor="let customer of customers" >
           <td><img src="{{customer.image}}" class="img-responsive img-circle"></td>
           <td>{{customer.name}}</td>
           <td>{{customer.surname}}</td>
@@ -21,7 +21,7 @@
           <td>{{customer.country}}</td>
           <td>{{customer.gender}}</td>
           <td><span class="btn btn-danger" (click)="deleteCustomer(customer.id)" >X</span></td>
-          <td><span class="btn btn-info" [routerLink]="['/updateCustomer', customer.id]" >X</span></td>
+          <td><span class="btn btn-info" [(listiId)]="listiId" [routerLink]="['/customer', customer.id]" >X</span></td>
         </tr>
       </tbody>
     </table>

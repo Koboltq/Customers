@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { CustomerComponent } from './customer/customer.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { NavComponent } from './nav/nav.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+/*Services*/
+import { CustomersService } from '../app/services/CustomersService/Customers.service';
+import { EmitterService} from '../app/services/EmitterService/Emitter.service';
+import { WeatherService} from '../app/services/WeatherService/Weather.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,8 @@ import { NavComponent } from './nav/nav.component';
     HomeComponent,
     CustomerComponent,
     UpdateCustomerComponent,
-    NavComponent
+    NavComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +32,16 @@ import { NavComponent } from './nav/nav.component';
     RouterModule.forRoot([
       {path: "customers", component: HomeComponent},
       {path: "customer", component: CustomerComponent},
-      {path: "updateCustomer/:id", component: UpdateCustomerComponent}
+      {path: "customer/:id", component: CustomerComponent},
+      {path: "updateCustomer/:id", component: UpdateCustomerComponent},
+      {path: "404", component: NotFoundComponent},
     ])
   ],
-  providers: [],
+  providers: [
+    CustomersService,
+    EmitterService,
+    WeatherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

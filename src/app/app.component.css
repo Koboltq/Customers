@@ -5,3 +5,15 @@ navigation {
 router-outlet {
     width:80%;  
 }
+
+.main {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; 
+    width: 100%; /*otherwise div defaults to page width*/
+    margin: 0 auto; /*horizontally centers div*/
+    background-color: rgb(230, 228, 228);
+}
+
