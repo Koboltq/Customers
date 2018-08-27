@@ -21,7 +21,7 @@
           <td>{{customer.country}}</td>
           <td>{{customer.gender}}</td>
           <td><span class="btn btn-danger" (click)="deleteCustomer(customer.id)" >X</span></td>
-          <td><span class="btn btn-info" [(listiId)]="listiId" [routerLink]="['/customer', customer.id]" >X</span></td>
+          <td><span class="btn btn-info" [routerLink]="['/updateCustomer', customer.id]" >X</span></td>
         </tr>
       </tbody>
     </table>

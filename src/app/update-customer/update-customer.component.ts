@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import {ActivatedRoute,Router} from '@angular/router';
+import { ICustomers } from 'app/models/customer';
+import {CustomersService} from '../services/CustomersService/Customers.service';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -11,31 +13,26 @@ import 'rxjs/add/operator/toPromise';
 export class UpdateCustomerComponent implements OnInit {
 
   id:number;
-  customer = {};
+  customer : ICustomers;
   customers = [];
   weather = {};
   exist = false;
-  customertObj:Object = {};
   private headers = new Headers({'Content-Type': 'application/json'});
-  constructor(private router: Router, private route: ActivatedRoute, private http:Http) { }
+  constructor(private router: Router, private route: ActivatedRoute, private http:Http,
+  private _customersService: CustomersService ) { }
   
 
   
   updateCustomer(customer) {
-    this.customertObj = {
-      "name": customer.name,
-      "surname": customer.surname,
-      "city": customer.city,
-      "country":customer.country,
-      "gender": customer.gender
-    };
-
-    const url = "http://localhost:5555/customers/"+this.id.toString();
-    this.http.put(url, JSON.stringify(this.customertObj), {headers:this.headers})
-    .toPromise()
-    .then(()=>{
-      this.router.navigate(['/'])
-    });
+    
+    if(this.customer.gender == false)
+      this.customer.image = './assets/icon8-man.png'
+    else
+      this.customer.image = './assets/icon8-woman.png';
+    this._customersService.updateCustomer(customer).toPromise()
+    .then(() => {
+      this.router.navigate(['/customers']);
+    })
   }
 
   getWeather(city) {

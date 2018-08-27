@@ -4,6 +4,6 @@ export class ICustomers {
     surname: string;
     city: string;
     country: string;
-    gender: boolean;
+    gender: string;
     image: string;
 }
