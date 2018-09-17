@@ -1,15 +1,6 @@
 {
   "customers": [
     {
-      "name": "Jan",
-      "surname": "Nowak",
-      "city": "Mikołów",
-      "country": "Polska",
-      "gender": "male",
-      "image": "./assets/icon8-woman.png",
-      "id": 1
-    },
-    {
       "name": "Ola",
       "surname": "Tow",
       "city": "Katowice",
@@ -19,13 +10,22 @@
       "id": 2
     },
     {
-      "name": "Michal",
-      "surname": "Twas",
-      "city": "Gdańsk",
+      "name": "Jan",
+      "surname": "Nowak",
+      "city": "Katowice",
       "country": "Polska",
       "gender": "male",
-      "image": "./assets/icon8-woman.png",
+      "image": "./assets/icon8-man.png",
       "id": 3
+    },
+    {
+      "name": "Kasia",
+      "surname": "Test",
+      "city": "Rybnik",
+      "country": "Polska",
+      "gender": "female",
+      "image": "./assets/icon8-woman.png",
+      "id": 4
     }
   ]
 }

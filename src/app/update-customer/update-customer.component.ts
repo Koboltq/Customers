@@ -25,7 +25,7 @@ export class UpdateCustomerComponent implements OnInit {
   
   updateCustomer(customer) {
     
-    if(this.customer.gender == false)
+    if(this.customer.gender == "man")
       this.customer.image = './assets/icon8-man.png'
     else
       this.customer.image = './assets/icon8-woman.png';
